@@ -3,6 +3,7 @@ package com.comcast.ofd.User;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import com.comcast.ofd.BaseTest.BaseClass;
 import com.comcast.ofd.generic.webdriverutility.JavaUtility;
+import com.comcast.ofd.objectrepsositoryutility.CartSummaryPage;
 import com.comcast.ofd.objectrepsositoryutility.UserAddToCartPage;
 import com.comcast.ofd.objectrepsositoryutility.UserHomePage;
 import com.comcast.ofd.objectrepsositoryutility.UserLoginPage;
@@ -24,7 +26,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CreateUser extends BaseClass {
 	
-	@Test
+	@Test (groups="Smoke Test")
 	
 	public void CreateUser() throws EncryptedDocumentException, IOException, InterruptedException  {
 		 String phoneNumber = jlib.generatePhoneNumber();
@@ -53,18 +55,17 @@ public class CreateUser extends BaseClass {
 		 urp.getPhonenumber().sendKeys(phoneNumber);
 		String Address = elib.getDataFromExcel("sheet1", 1, 5);
 		 urp.getDeliveryAddress().sendKeys(Address);
-		 
+		
 		
 	
 	}
 	
 	
-	@Test
+	@Test (groups="IntegrationTest")
 	public void UserLogin() throws IOException, InterruptedException {
 		UserWelcomePage uwp= new UserWelcomePage(driver);
+		driver.manage().window().maximize();
 		uwp.getLoginbuton().click();
-		
-		//String URL=flib.getDataFromPropertiesFile("Url"); 
 		String USERNAME=flib.getDataFromPropertiesFile("Username"); 
 		String  PASSWORD=flib.getDataFromPropertiesFile("Password");
 	 UserLoginPage ulp= new UserLoginPage(driver);
@@ -81,10 +82,13 @@ public class CreateUser extends BaseClass {
          } catch (InterruptedException e) {
              e.printStackTrace();
          }
+        
+        uhp.getLogoutButton().click();
 		 
 	}
 	
-	@Test
+	@Test (groups="System Test")
+	
 	public void Placeorder() throws IOException, InterruptedException {
 		UserWelcomePage uwp= new UserWelcomePage(driver);
 		driver.manage().window().maximize();
@@ -101,18 +105,30 @@ public class CreateUser extends BaseClass {
          WebElement orderNowLink = driver.findElement(By.xpath(xpath));
          js.executeScript("arguments[0].click();", orderNowLink);
          try {
-             Thread.sleep(2000); // Just to wait for 2 seconds, you can use WebDriverWait for better synchronization
+             Thread.sleep(2000); // Just to wait For 2 seconds, you can use WebDriverWait for better synchronization
          } catch (InterruptedException e) {
              e.printStackTrace();
          }
          
-         UserAddToCartPage uac= new UserAddToCartPage();
-         //Actions action= new Actions(driver);
-        // action.scrollToElement(uac.getAddToCartbutton()).build().perform();
-         uac.getAddToCartbutton().click();
-         Thread.sleep(2000);
-         uac.getCheckoutbutton().click();
+         UserAddToCartPage uac= new UserAddToCartPage(driver);
+         WebElement add = uac.getAddToCartbutton();
+    
+         js.executeScript("arguments[0].click();",add );
          
+         Thread.sleep(3000);
+        WebElement check = uac.getCheckoutbutton();
+         js.executeScript("arguments[0].click();",check );
+         
+         CartSummaryPage cp= new CartSummaryPage(driver);
+         cp.getSubmitbutton().click();
+         Thread.sleep(3000);
+         Alert ale= driver.switchTo().alert();
+ 		Thread.sleep(2000);
+ 		ale.accept();
+ 		Thread.sleep(2000);
+ 		ale.accept();
+         UserHomePage uhp= new UserHomePage(driver);
+         uhp.getLogoutButton().click();
 		
 	}
 	 

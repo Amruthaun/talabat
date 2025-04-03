@@ -1,109 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
+<testng-results ignored="2" total="10" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-03T10:31:50 IST" name="Default suite" finished-at="2025-04-03T10:32:02 IST" duration-ms="12299">
+  <suite started-at="2025-04-03T16:08:29 IST" name="Suite" finished-at="2025-04-03T16:11:04 IST" duration-ms="155084">
     <groups>
+      <group name="System Test">
+        <method signature="AdminLogin.CreateResturant()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" name="CreateResturant" class="com.comcast.ofd.Admin.AdminLogin"/>
+        <method signature="AdminLogin.DeleteOrder()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" name="DeleteOrder" class="com.comcast.ofd.Admin.AdminLogin"/>
+        <method signature="AdminLogin.ViewOrderDetails()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" name="ViewOrderDetails" class="com.comcast.ofd.Admin.AdminLogin"/>
+        <method signature="CreateUser.Placeorder()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" name="Placeorder" class="com.comcast.ofd.User.CreateUser"/>
+      </group> <!-- System Test -->
+      <group name="Smoke Test">
+        <method signature="AdminLogin.AdminLogin()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" name="AdminLogin" class="com.comcast.ofd.Admin.AdminLogin"/>
+        <method signature="CreateUser.CreateUser()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" name="CreateUser" class="com.comcast.ofd.User.CreateUser"/>
+      </group> <!-- Smoke Test -->
+      <group name="IntegrationTest">
+        <method signature="AdminLogin.AddCateogry()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" name="AddCateogry" class="com.comcast.ofd.Admin.AdminLogin"/>
+        <method signature="CreateUser.UserLogin()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" name="UserLogin" class="com.comcast.ofd.User.CreateUser"/>
+      </group> <!-- IntegrationTest -->
     </groups>
-    <test started-at="2025-04-03T10:31:50 IST" name="Default test" finished-at="2025-04-03T10:32:02 IST" duration-ms="12299">
-      <class name="com.comcast.ofd.Admin.AdminLogin">
-        <test-method is-config="true" signature="congifgBS()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:31:50 IST" name="congifgBS" finished-at="2025-04-03T10:31:50 IST" duration-ms="27" status="PASS">
+    <test started-at="2025-04-03T16:08:29 IST" name="Test" finished-at="2025-04-03T16:11:04 IST" duration-ms="155084">
+      <class name="com.comcast.ofd.User.CreateUser">
+        <test-method is-config="true" signature="congifgBS()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:29 IST" name="congifgBS" finished-at="2025-04-03T16:08:29 IST" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- congifgBS -->
-        <test-method is-config="true" signature="configBC()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:31:50 IST" name="configBC" finished-at="2025-04-03T10:31:54 IST" duration-ms="4080" status="PASS">
+        <test-method is-config="true" signature="configBC()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:29 IST" name="configBC" finished-at="2025-04-03T16:08:33 IST" duration-ms="3857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBC -->
-        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:31:54 IST" name="configBM" finished-at="2025-04-03T10:31:55 IST" duration-ms="785" status="PASS">
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:33 IST" name="configBM" finished-at="2025-04-03T16:08:40 IST" duration-ms="6788" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBM -->
-        <test-method signature="ViewOrderDetails()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:31:55 IST" name="ViewOrderDetails" finished-at="2025-04-03T10:32:02 IST" duration-ms="7319" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <a href="view_order.php?user_upd=20" "="" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5">...</a> is not clickable at point (1261, 575). Other element would receive the click: <div style="width: 100%;position: fixed;bottom:0px;left:0px;padding-top:10px;background-color:rgb(154, 200, 205, 0.8);display:flex;justify-content:center;z-index: 1000;">...</div>
-  (Session info: chrome=135.0.7049.41)
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [961fe052c8cc99409411a66be4cdc2f4, clickElement {id=f.98815B3A4883C6661F5520FDFA218F52.d.591BAA7CE4FAB3D88A98E2AE422071EA.e.53}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.41, chrome: {chromedriverVersion: 135.0.7049.42 (0f351bbd2617..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56194/devtoo..., se:cdpVersion: 135.0.7049.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (961fe052c8cc99409411a66be4cdc2f4)] -> xpath: (//*[contains(@class, 'btn-info') and contains(@class, 'btn-flat')])[5]]
-Session ID: 961fe052c8cc99409411a66be4cdc2f4]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="view_order.php?user_upd=20" "="" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5">...</a> is not clickable at point (1261, 575). Other element would receive the click: <div style="width: 100%;position: fixed;bottom:0px;left:0px;padding-top:10px;background-color:rgb(154, 200, 205, 0.8);display:flex;justify-content:center;z-index: 1000;">...</div>
-  (Session info: chrome=135.0.7049.41)
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [961fe052c8cc99409411a66be4cdc2f4, clickElement {id=f.98815B3A4883C6661F5520FDFA218F52.d.591BAA7CE4FAB3D88A98E2AE422071EA.e.53}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.41, chrome: {chromedriverVersion: 135.0.7049.42 (0f351bbd2617..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56194/devtoo..., se:cdpVersion: 135.0.7049.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (961fe052c8cc99409411a66be4cdc2f4)] -> xpath: (//*[contains(@class, 'btn-info') and contains(@class, 'btn-flat')])[5]]
-Session ID: 961fe052c8cc99409411a66be4cdc2f4
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
-at com.comcast.ofd.Admin.AdminLogin.ViewOrderDetails(AdminLogin.java:147)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        <test-method signature="CreateUser()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:40 IST" name="CreateUser" finished-at="2025-04-03T16:08:48 IST" duration-ms="7891" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewOrderDetails -->
-        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:32:02 IST" name="configAM" finished-at="2025-04-03T10:32:02 IST" duration-ms="15" status="PASS">
+        </test-method> <!-- CreateUser -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:48 IST" name="configAM" finished-at="2025-04-03T16:08:48 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAM -->
-        <test-method is-config="true" signature="configAC()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:32:02 IST" name="configAC" finished-at="2025-04-03T10:32:02 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:48 IST" name="configBM" finished-at="2025-04-03T16:08:53 IST" duration-ms="5259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="Placeorder()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:08:53 IST" name="Placeorder" finished-at="2025-04-03T16:09:10 IST" duration-ms="17258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Placeorder -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:09:10 IST" name="configAM" finished-at="2025-04-03T16:09:10 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:09:10 IST" name="configBM" finished-at="2025-04-03T16:09:16 IST" duration-ms="5230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="UserLogin()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:09:16 IST" name="UserLogin" finished-at="2025-04-03T16:09:21 IST" duration-ms="5234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogin -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:09:21 IST" name="configAM" finished-at="2025-04-03T16:09:21 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configAC()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:09:21 IST" name="configAC" finished-at="2025-04-03T16:09:21 IST" duration-ms="442" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAC -->
-        <test-method is-config="true" signature="congifgAS()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@45752059]" started-at="2025-04-03T10:32:02 IST" name="congifgAS" finished-at="2025-04-03T10:32:02 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="congifgAS()[pri:0, instance:com.comcast.ofd.User.CreateUser@38425407]" started-at="2025-04-03T16:11:05 IST" name="congifgAS" finished-at="2025-04-03T16:11:05 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- congifgAS -->
+      </class> <!-- com.comcast.ofd.User.CreateUser -->
+      <class name="com.comcast.ofd.Admin.AdminLogin">
+        <test-method is-config="true" signature="configBC()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:21 IST" name="configBC" finished-at="2025-04-03T16:09:24 IST" duration-ms="2282" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBC -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:24 IST" name="configBM" finished-at="2025-04-03T16:09:31 IST" duration-ms="6915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="AddCateogry()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:31 IST" name="AddCateogry" finished-at="2025-04-03T16:09:42 IST" duration-ms="11344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddCateogry -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:42 IST" name="configAM" finished-at="2025-04-03T16:09:42 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:42 IST" name="configBM" finished-at="2025-04-03T16:09:47 IST" duration-ms="5212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="AdminLogin()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:47 IST" name="AdminLogin" finished-at="2025-04-03T16:09:56 IST" duration-ms="8476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdminLogin -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:56 IST" name="configAM" finished-at="2025-04-03T16:09:56 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:09:56 IST" name="configBM" finished-at="2025-04-03T16:10:01 IST" duration-ms="5421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="CreateResturant()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:01 IST" name="CreateResturant" finished-at="2025-04-03T16:10:17 IST" duration-ms="16408" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateResturant -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:17 IST" name="configAM" finished-at="2025-04-03T16:10:17 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:17 IST" name="configBM" finished-at="2025-04-03T16:10:23 IST" duration-ms="5186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="DeleteOrder()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:23 IST" name="DeleteOrder" finished-at="2025-04-03T16:10:39 IST" duration-ms="16358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteOrder -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:39 IST" name="configAM" finished-at="2025-04-03T16:10:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:39 IST" name="configBM" finished-at="2025-04-03T16:10:44 IST" duration-ms="5246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="ViewOrderDetails()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:10:44 IST" name="ViewOrderDetails" finished-at="2025-04-03T16:11:02 IST" duration-ms="18055" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ViewOrderDetails -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:11:02 IST" name="configAM" finished-at="2025-04-03T16:11:02 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configAC()[pri:0, instance:com.comcast.ofd.Admin.AdminLogin@327514f]" started-at="2025-04-03T16:11:02 IST" name="configAC" finished-at="2025-04-03T16:11:04 IST" duration-ms="2011" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAC -->
       </class> <!-- com.comcast.ofd.Admin.AdminLogin -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.comcast.ofd.Admin.AdminLogin">
+      <class name="com.comcast.ofd.User.CreateUser">
         <methods>
-          <include name="congifgAS"/>
           <include name="configBM"/>
+          <include name="congifgAS"/>
           <include name="configAM"/>
           <include name="congifgBS"/>
           <include name="configBC"/>
           <include name="configAC"/>
-          <include name="ViewOrderDetails"/>
+          <include name="CreateUser"/>
         </methods>
-      </class> <!-- com.comcast.ofd.Admin.AdminLogin -->
+      </class> <!-- com.comcast.ofd.User.CreateUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

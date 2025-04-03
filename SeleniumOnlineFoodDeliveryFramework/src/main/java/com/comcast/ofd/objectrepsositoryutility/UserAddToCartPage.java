@@ -7,13 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UserAddToCartPage{
 	WebDriver driver;
-	public void AddToCartPage(WebDriver driver) {
+	public UserAddToCartPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
 	  
-	@FindBy(xpath="(//input[@value='Add To Cart'])")
+	@FindBy(xpath="//input[@type='submit']")
 	private WebElement AddToCartbutton;
+	
 	public WebElement getAddToCartbutton() {
 		return AddToCartbutton;
 	}

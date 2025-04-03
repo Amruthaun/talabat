@@ -27,7 +27,9 @@ public class AllOrdersPage {
 	
 	
 	//for Edit button
-	@FindBy(xpath="(//*[contains(@class, 'btn-info') and contains(@class, 'btn-flat')])[5]")
+	@FindBy(xpath="//a[i[contains(@class, 'fa-edit')]]")
+	//a[contains(@class, 'btn-info')]
+
 	private WebElement EditButton;
 	
 	

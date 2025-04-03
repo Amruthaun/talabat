@@ -19,6 +19,7 @@ import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 import com.comcast.crm.genericfileutility.ExcelUtility;
 import com.comcast.crm.genericfileutility.FileUtility;
 import com.comcast.ofd.generic.webdriverutility.JavaUtility;
+import com.comcast.ofd.objectrepsositoryutility.AdminHomePage;
 import com.comcast.ofd.objectrepsositoryutility.UserHomePage;
 
 public class BaseClass {
@@ -32,14 +33,14 @@ public class BaseClass {
 
    
  
-	@BeforeSuite  (groups={"Smoke Test", "Regression Test"})
+	@BeforeSuite (groups={"Smoke Test", "Integration Test", "System Test"})
 		public void congifgBS() throws Throwable {
 		System.out.println("===connect to the DB====");
 	}
 
 	
 	//@Parameters("BROWSER")
-	@BeforeClass (groups={"Smoke Test", "Regression Test"})
+	@BeforeClass (groups={"Smoke Test", "Integration Test", "System Test"})
 		public void configBC() throws Throwable {
 			System.out.println("==Launch the browser==");
 			String BROWSER=flib.getDataFromPropertiesFile("Browser");
@@ -58,9 +59,10 @@ public class BaseClass {
 			UtilityClassObject.setDriver(driver);
 		}
 		
-	@BeforeMethod (groups={"Smoke Test", "Regression Test"})
-	public void configBM() throws IOException {
+	@BeforeMethod (groups={"Smoke Test", "Integration Test", "System Test"})
+	public void configBM() throws IOException, InterruptedException {
 		System.out.println("===Login===");
+		Thread.sleep(5000);
 		String URL = flib.getDataFromPropertiesFile("Url");
 		driver.get(URL);
 		//String USERNAME = flib.getDataFromPropertiesFile("Username");
@@ -70,24 +72,21 @@ public class BaseClass {
 	}
 	
 	
-	@AfterMethod  (groups={"Smoke Test", "Regression Test"})
-	public void configAM() {
+	@AfterMethod (groups={"Smoke Test", "Integration Test", "System Test"})
+	public void configAM() throws InterruptedException {
 		System.out.println("===Logout===");
-		UserHomePage hp= new UserHomePage(driver);
-		hp.getLogoutButton();
-		
 		
 	}
 	
 
-	@AfterClass  (groups={"Smoke Test", "Regression Test"})
+	@AfterClass (groups={"Smoke Test", "Integration Test", "System Test"})
 	public void configAC() {
 		System.out.println("==close the browser==");
-		//driver.quit();
+		driver.quit();
 		}
 	
 	
-	@AfterSuite  (groups={"Smoke Test", "Regression Test"})
+	@AfterSuite (groups={"Smoke Test", "Integration Test", "System Test"})
 	public void congifgAS() throws SQLException {
 	System.out.println("==close the connection====");
 	
