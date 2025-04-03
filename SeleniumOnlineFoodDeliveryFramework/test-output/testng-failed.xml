@@ -5,13 +5,13 @@
     <classes>
       <class name="com.comcast.ofd.Admin.AdminLogin">
         <methods>
-          <include name="CreateResturant"/>
-          <include name="configBM"/>
           <include name="congifgAS"/>
+          <include name="configBM"/>
           <include name="configAM"/>
           <include name="congifgBS"/>
           <include name="configBC"/>
           <include name="configAC"/>
+          <include name="ViewOrderDetails"/>
         </methods>
       </class> <!-- com.comcast.ofd.Admin.AdminLogin -->
     </classes>

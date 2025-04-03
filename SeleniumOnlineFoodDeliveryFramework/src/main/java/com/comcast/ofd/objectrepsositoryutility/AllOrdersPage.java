@@ -12,6 +12,15 @@ public class AllOrdersPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	public WebElement getDeletebutton() {
+		return Deletebutton;
+	}
+
+
+	public WebElement getEditButton() {
+		return EditButton;
+	}
+
 	// for Delete Button
 	@FindBy(xpath="//i[@style='font-size:16px']")
 	private WebElement Deletebutton;

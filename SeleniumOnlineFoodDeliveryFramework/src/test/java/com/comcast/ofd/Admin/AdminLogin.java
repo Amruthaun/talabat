@@ -2,6 +2,7 @@ package com.comcast.ofd.Admin;
 
 import static org.testng.Assert.assertEquals;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
@@ -18,12 +19,13 @@ import com.comcast.ofd.objectrepsositoryutility.AddRestaurantCategoryPage;
 import com.comcast.ofd.objectrepsositoryutility.AdminHomePage;
 import com.comcast.ofd.objectrepsositoryutility.AdminLoginPage;
 import com.comcast.ofd.objectrepsositoryutility.AllMenuPage;
+import com.comcast.ofd.objectrepsositoryutility.AllOrdersPage;
 
 public class AdminLogin extends BaseClass {
 	
 	@Test
 	
-	public void AdminLogin(){
+	public void AdminLogin() throws InterruptedException{
 		WebDriver driver= new ChromeDriver();
 		driver.get("http://49.249.28.218:8081/AppServer/Online_Food_Ordering_System/admin/");
 		AdminLoginPage alp= new AdminLoginPage(driver);
@@ -33,6 +35,11 @@ public class AdminLogin extends BaseClass {
 		WebElement submitButton = alp.getSubmitbutton();
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", submitButton);
 		submitButton.click();
+		AdminHomePage ahp= new AdminHomePage(driver);
+
+		ahp.getSignout().click();
+		Thread.sleep(2000);
+		ahp.getLogoutdropdown().click();
 
 	}
 	 
@@ -90,6 +97,62 @@ public class AdminLogin extends BaseClass {
 		Thread.sleep(2000);
 		ahp.getLogoutdropdown().click();
 	}
+	
+	@Test
+	
+	public void DeleteOrder() throws InterruptedException {
+		WebDriver driver= new ChromeDriver();
+		driver.get("http://49.249.28.218:8081/AppServer/Online_Food_Ordering_System/admin/");
+		driver.manage().window().maximize();
+		AdminLoginPage alp= new AdminLoginPage(driver);
+		alp.AdminLogin("admin", "codeastro");
+		
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement submitButton = alp.getSubmitbutton();
+		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", submitButton);
+		submitButton.click(); 
+		Thread.sleep(2000);
+		AdminHomePage ahp= new AdminHomePage(driver);
+		ahp.getOrders().click();
+		AllOrdersPage aop= new AllOrdersPage(driver);
+		aop.getDeletebutton().click();
+		Thread.sleep(3000);
+		Alert ale= driver.switchTo().alert();
+		Thread.sleep(2000);
+		ale.accept();
+		ahp.getSignout().click();
+		Thread.sleep(2000);
+		ahp.getLogoutdropdown().click();
+			
+	}
+	
+	
+	@Test
+	
+	public void ViewOrderDetails() throws InterruptedException {
+		WebDriver driver= new ChromeDriver();
+		driver.get("http://49.249.28.218:8081/AppServer/Online_Food_Ordering_System/admin/");
+		driver.manage().window().maximize();
+		AdminLoginPage alp= new AdminLoginPage(driver);
+		alp.AdminLogin("admin", "codeastro");
+		
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement submitButton = alp.getSubmitbutton();
+		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", submitButton);
+		submitButton.click(); 
+		Thread.sleep(2000);
+		AdminHomePage ahp= new AdminHomePage(driver);
+		ahp.getOrders().click();
+		AllOrdersPage aop= new AllOrdersPage(driver);
+		aop.getEditButton().click();
+		Thread.sleep(2000);
+		
+		
+		
+		
+	}
+	
+	
 	
 	
 	
